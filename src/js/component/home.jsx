@@ -33,6 +33,11 @@ const Home = () => {
 		})
 		.catch((err) => console.log("Error"));
 	};
+	const removeTodo = index => {
+		const newTodos = [...todoTask];
+		newTodos.splice(index);
+		setTask(newTodos);
+	};
   
 	useEffect(() => {
 	  load();
@@ -94,7 +99,7 @@ const Home = () => {
 		</div>
 		</div>
 		</div>
-		
+		<center><button className="mt-4" onClick={() => removeTodo()}>Borrar todo</button></center>
 		</>
 	  
 	);
